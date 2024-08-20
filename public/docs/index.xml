@@ -15,6 +15,605 @@
     
     
     <item>
+      <title>1 - Tenant Tanımlanması</title>
+      <link>/docs/tenant-creation/tenant-definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/tenant-creation/tenant-definition/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Yeni bir tenant oluşturulurken, bu tenant’a ait bir kod belirlenir. Bu kod en fazla 50 karakter uzunluğunda olabilir.&lt;/p&gt;
+&lt;p&gt;Bu kod, veritabanındaki SENSWISE veritabanının COR şemasına ait TENANT tablosuna eklenir. Tenant&amp;rsquo;ı oluşturmak istediğiniz ortamın veritabanına bağlandıktan sonra aşağıdaki SQL sorgusuyla NEW_TENANT kodunu ekleyebilirsiniz:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;INSERT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;INTO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;COR&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;TENANT&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CODE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;NAME&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;DEFAULT_LANGUAGE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CREATED_DATE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;MODIFIED_DATE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;IS_DELETED&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_TYPE_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;VALUES&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;NEW_TENANT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;New Tenant&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;tr-TR&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;2024-05-21 00:00:00.000&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Tenant kodunun &lt;strong&gt;SCREAMING_SNAKE_CASE&lt;/strong&gt; formatında (yani büyük harflerle ve alt tire ile birleştirilmiş) olması standartlık sağlayacaktır, ancak bu zorunlu değildir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;DEFAULT_LANGUAGE&lt;/strong&gt; ve &lt;strong&gt;USER_TYPE_ID&lt;/strong&gt; alanlarının, yeni oluşturulacak tenant için uygun şekilde ayarlanması gerekir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DEFAULT_LANGUAGE&lt;/strong&gt;: Tenant’ın varsayılan dilini belirtir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;USER_TYPE_ID&lt;/strong&gt;: Tenant’ın üyelik tipini belirler. Kullanılabilecek değerler şunlardır:
+&lt;ol&gt;
+&lt;li&gt;FREE&lt;/li&gt;
+&lt;li&gt;CLASSIC&lt;/li&gt;
+&lt;li&gt;ANALYTICS&lt;/li&gt;
+&lt;li&gt;PRO&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Örneğin, &lt;strong&gt;USER_TYPE_ID&lt;/strong&gt; değerini 4 olarak belirlersek, bu tenant PRO üyelik tipinde olacaktır.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>2 - Yeni Tenant&#39;a Admin Atanması</title>
+      <link>/docs/tenant-creation/assign-admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/tenant-creation/assign-admin/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Yeni oluşturulan tenant için bir admin kullanıcı atamak gerekmektedir. Bunu yapmak için aşağıdaki adımları izleyebilirsiniz:&lt;/p&gt;
+&lt;h4&gt;2.1 Kullanıcı Oluşturma:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;21-kullanıcı-oluşturma&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-kullan%c4%b1c%c4%b1-olu%c5%9fturma&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;İlgili sunucunun kayıt olma adresinden (örneğin, &lt;a href=&#34;https://dev.senswise.co/sign-up&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://dev.senswise.co/sign-up&lt;/a&gt;) bir &lt;strong&gt;FREE_USER&lt;/strong&gt; hesabı oluşturun.&lt;/li&gt;
+&lt;li&gt;Bu kullanıcının daha sonra admin olarak atanabilmesi için gerekli işlemleri yapacağız.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2.2 Kullanıcı Bilgilerinin Güncellenmesi:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;22-kullanıcı-bilgilerinin-güncellenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-kullan%c4%b1c%c4%b1-bilgilerinin-g%c3%bcncellenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Örneğin, admin olacak kullanıcının e-posta adresi &lt;code&gt;new_tenant@senswise.co&lt;/code&gt; olsun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SENSWISE&lt;/strong&gt; veritabanındaki &lt;strong&gt;USER&lt;/strong&gt; şemasının &lt;strong&gt;USER&lt;/strong&gt; tablosunda bu kullanıcıyı bulmak için aşağıdaki sorguyu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;SELECT&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;FROM&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;EMAIL&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;LIKE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;%new_tenant@senswise.co%&amp;#39;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bulduğunuz kullanıcının &lt;code&gt;ID&lt;/code&gt; numarasını alın. Örneğin, &lt;code&gt;ID&lt;/code&gt; numarası &lt;code&gt;12345&lt;/code&gt; olsun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Eğer bu kullanıcının aynı zamanda bir lider olması gerekiyorsa, &lt;strong&gt;IS_MANAGER&lt;/strong&gt; alanını da &lt;code&gt;true&lt;/code&gt; olarak güncelleyin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2.3 Kullanıcı Yetkilerinin Tanımlanması:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;23-kullanıcı-yetkilerinin-tanımlanması&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#23-kullan%c4%b1c%c4%b1-yetkilerinin-tan%c4%b1mlanmas%c4%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Kullanıcının &lt;code&gt;ID&lt;/code&gt; değerini &lt;strong&gt;USER&lt;/strong&gt; şemasındaki &lt;strong&gt;USER_ROLE&lt;/strong&gt; tablosunda sorgulayarak, ilgili kaydın &lt;strong&gt;ROLE_ID&lt;/strong&gt; değerini &lt;code&gt;4&lt;/code&gt; (&lt;strong&gt;ENDUSER&lt;/strong&gt;) yerine &lt;code&gt;2&lt;/code&gt; (&lt;strong&gt;ADMIN&lt;/strong&gt;) olarak güncelleyiniz.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Admin kullanıcısının durumunu güncellemek için aşağıdaki sorguyu kullanın:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;UPDATE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_ROLE&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SET&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ROLE_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;12345&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Burada &lt;strong&gt;ROLE_ID&lt;/strong&gt; ile yetkiler belirlenir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1&lt;/code&gt; - SUPERADMIN&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&lt;/code&gt; - ADMIN&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt; - MANAGER&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;4&lt;/code&gt; - ENDUSER&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yeni tenant için sadece &lt;code&gt;2&lt;/code&gt; (ADMIN) veya hem &lt;code&gt;2&lt;/code&gt; hem de &lt;code&gt;3&lt;/code&gt; (MANAGER) atanabilir. &lt;strong&gt;SUPERADMIN&lt;/strong&gt; yetkisi sadece SENSWISE çalışanları için kullanılmalıdır, müşteriler bu yetkiye sahip olmamalıdır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2.4 Tenant Ataması ve Kullanıcı Tipinin Güncellenmesi:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;24-tenant-ataması-ve-kullanıcı-tipinin-güncellenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#24-tenant-atamas%c4%b1-ve-kullan%c4%b1c%c4%b1-tipinin-g%c3%bcncellenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Admin kullanıcısını yeni tenant&amp;rsquo;a atamak ve kullanıcı tipini güncellemek için aşağıdaki sorguyu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;UPDATE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_TENANT&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;SET&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;TENANT_CODE&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;NEW_TENANT&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_TYPE_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;WHERE&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;USER_ID&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;12345&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Burada &lt;code&gt;USER_TYPE_ID&lt;/code&gt; &lt;code&gt;4&lt;/code&gt; olarak ayarlandığı için kullanıcı &lt;strong&gt;PRO&lt;/strong&gt; üye olacaktır.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2.5 Sonuç:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;25-sonuç&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#25-sonu%c3%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Yeni tenant için bir admin kullanıcısı oluşturulmuş oldu. Bu kullanıcı artık sisteme admin olarak giriş yapabilir, ancak diğer veriler eklenene kadar sınırlı yetkilerle çalışacaktır. 😊&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>3 - Tenant Verilerinin Yeni Tenant&#39;a Eklenmesi</title>
+      <link>/docs/tenant-creation/data-migration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/tenant-creation/data-migration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Bu işlemler, iki farklı proje kullanılarak gerçekleştirilir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3.1&lt;/strong&gt; için &lt;a href=&#34;https://github.com/Senswiseco/SenseCorSeeds&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SenseCorSeeds&lt;/a&gt; projesi kullanılır.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3.2&lt;/strong&gt; için &lt;strong&gt;SenswiseNotificationUI&lt;/strong&gt; projesinin &lt;a href=&#34;https://github.com/Senswiseco/SenswiseNotificationUI/tree/newmdsystem&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;newmdsystem&lt;/a&gt; branch&amp;rsquo;i kullanılır.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu projeleri çalıştırabilmek için öncelikle &lt;strong&gt;bun&lt;/strong&gt; paket yöneticisini kurmanız gerekmektedir. &lt;strong&gt;Bun&lt;/strong&gt;&amp;lsquo;u yüklemek için aşağıdaki bağlantıyı kullanabilirsiniz:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://bun.sh/docs/installation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://bun.sh/docs/installation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ayrıca, &lt;strong&gt;Visual Studio Code&lt;/strong&gt; için &amp;ldquo;Bun for Visual Studio Code&amp;rdquo; eklentisini de ekleyerek daha kolay bir geliştirme ortamı sağlayabilirsiniz.&lt;/p&gt;
+&lt;h3&gt;3.1 Yeni Tenant için Parametrelerin Eklenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;31-yeni-tenant-için-parametrelerin-eklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-yeni-tenant-i%c3%a7in-parametrelerin-eklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Proje açıldıktan sonra, &lt;strong&gt;.env.sample&lt;/strong&gt; dosyasını kopyalayarak &lt;strong&gt;.env&lt;/strong&gt; dosyası oluşturun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hangi ortama bağlanacaksanız, o ortamın veri tabanı bağlantısını &lt;strong&gt;.env&lt;/strong&gt; dosyasında etkinleştirin (yorum satırından çıkarın).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;seeds&lt;/code&gt; klasörü altında, &lt;code&gt;parameter-group&lt;/code&gt; içinde bulunan &lt;code&gt;data.ts&lt;/code&gt; dosyasını açın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;PREDEFINED_SCALE&lt;/code&gt; objesi içindeki &lt;code&gt;output&lt;/code&gt; alanlarını gözden geçirin:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Her bir &lt;code&gt;TENANT_CODE&lt;/code&gt; alanına uygun tenant kodunu girin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;value&lt;/code&gt; değerlerinin &lt;code&gt;0&lt;/code&gt; olduğundan emin olun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Örnek olarak, aşağıdaki kodu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-typescript&#34; data-lang=&#34;typescript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;overwriteWith&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;output&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;TENANT_CODE&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Scale2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bu işlem tenant kodları ve değerlerinin doğru bir şekilde ayarlandığını sağlar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Bu işlem bazen cache nedeniyle Scale durumunu &lt;code&gt;1&lt;/code&gt; olarak bırakabilir, bu yüzden anket şablonları yüklenmeyebilir. Eğer böyle bir durumla karşılaşırsanız, cache&amp;rsquo;in temizlenmesini beklemeniz gerekebilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Terminalde, projedeki bağımlılıkları yüklemek için &lt;code&gt;bun install&lt;/code&gt; komutunu çalıştırın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yeni tenant parametrelerini veritabanına yüklemek için &lt;code&gt;bun run index.ts&lt;/code&gt; komutunu çalıştırın.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yüklenen verileri &lt;strong&gt;CORE.PARAMETER&lt;/strong&gt; tablosunda görebilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Uyarı:&lt;/strong&gt; Bu işlem dev ve demo ortamlarında genellikle sorunsuz çalışırken, prod ortamında sorun çıkarsa birkaç kez denemeniz gerekebilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;3.2 Yeni Tenant için E-posta Template Yüklenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;32-yeni-tenant-için-e-posta-template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-yeni-tenant-i%c3%a7in-e-posta-template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SenswiseNotificationUI&lt;/strong&gt; projesinin &lt;strong&gt;newmdsystem&lt;/strong&gt; branch&amp;rsquo;ine geçin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Proje dosyalarında bulunan &lt;strong&gt;NotificationDefinitions.xlsx&lt;/strong&gt; dosyasını açın ve şu adımları izleyin:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yeni eklediğiniz tenant kodunu &lt;strong&gt;TENANT&lt;/strong&gt; sütununun altına girin.&lt;/li&gt;
+&lt;li&gt;Excel dosyasındaki herhangi bir tabloyu seçin ve sağ tıklayarak &amp;ldquo;Taşı ve Kopyala&amp;rdquo; seçeneğiyle bir kopyasını oluşturun.&lt;/li&gt;
+&lt;li&gt;Oluşturduğunuz kopyanın ismini yeni tenant ismiyle değiştirin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;.env&lt;/strong&gt; dosyasında yükleme yapacağınız veritabanı bağlantı ayarlarını yapılandırın. Bağlantı ayarlarında &lt;strong&gt;NOTIFICATION?schema=DEF&lt;/strong&gt; olmasına dikkat edin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Terminalde, eksik paketleri indirmek için &lt;code&gt;bun install&lt;/code&gt; komutunu çalıştırın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Son olarak, &lt;strong&gt;NotificationDefinitions.xlsx&lt;/strong&gt; dosyasındaki değişiklikleri veritabanına yüklemek için &lt;code&gt;bun run .\scripts\executeExcel.ts&lt;/code&gt; komutunu çalıştırın.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yapılan değişiklikleri &lt;strong&gt;GitHub&lt;/strong&gt; deposuna commit ile gönderin. Çünkü sonraki çalıştırılmalarda yeni eklenen tenant bilgilerinin excel dosyasında bulunması gerekir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>4 - Template Bilgilerinin Yüklenmesi</title>
+      <link>/docs/tenant-creation/template-setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/tenant-creation/template-setup/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Bu bölümde, Tenant ve anket (survey) bilgilerini içeren Excel Template bilgilerini sisteme yükleyeceğiz. İşlemler, ortamınıza göre farklılık gösterebilir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Dev ve Demo Ortamları&lt;/strong&gt;: Postman üzerinden doğrudan yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Production Ortamı&lt;/strong&gt;: Projeyi local ortamda çalıştırarak, Postman&amp;rsquo;den localdeki projeye istek atmanız gerekecek.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Herhangi bir ortamda anket yüklerken, işlem zaman aşımına uğrarsa, yükleme işlemi projeyi yerel ortamda çalıştırarak gerçekleştirilmelidir. Detaylar için &lt;a href=&#34;#46-projeyi-yerel-ortamda-%c3%a7al%c4%b1%c5%9ft%c4%b1rma&#34; &gt;4.6 Projeyi Yerel Ortamda Çalıştırma&lt;/a&gt; bölümüne bakabilirsiniz.&lt;/p&gt;
+&lt;h3&gt;Adımlar:&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;adımlar&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ad%c4%b1mlar&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3&gt;4.1 Postman Koleksiyonunu Hazırlama&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;41-postman-koleksiyonunu-hazırlama&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-postman-koleksiyonunu-haz%c4%b1rlama&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;İlk olarak,&lt;code&gt;Sense.postman_collection&lt;/code&gt; &lt;code&gt;Tenant Excel dosyaları&lt;/code&gt;  dosyalarını bilgisayarınıza indirin.&lt;/li&gt;
+&lt;li&gt;Ardından, Postman koleksiyonunu Postman uygulamasına aktarın.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4.2 Ortam ve Tenant Kodu Seçimi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;42-ortam-ve-tenant-kodu-seçimi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-ortam-ve-tenant-kodu-se%c3%a7imi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Postman&amp;rsquo;de &lt;code&gt;Sense&lt;/code&gt; üzerine gelin, &lt;code&gt;url&lt;/code&gt; kısmından uygun ortamı seçin ve anketleri ekleyeceğiniz tenant kodunu girin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Variable&lt;/th&gt;
+&lt;th&gt;Current Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;https://survey-api.dev.senswise.co&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;tenantCode&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TECH_TEST&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;4.3 Anket Template Yüklenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;43-anket-template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#43-anket-template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;SCALES TEMPLATE YÜKLENMESİ&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;scales-template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#scales-template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Skala bilgisi değişen tenantlar için diğer anketilerin tekrar yüklenmesi gerekmektedir.Bu aşamada Tenant ile ilgili Scales template yüklemiz gerekir. Postman Sense&amp;gt;TemplateUploads&amp;gt;SurveyOptionUpload  isteğine girin.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SurveyOptionUpload&lt;/strong&gt; işlemi için, tenant açma dosyalarındaki &lt;code&gt;Scales.xlsx&lt;/code&gt; dosyasını Postman&amp;rsquo;deki &lt;code&gt;Body&lt;/code&gt; alanına ekleyin ve &lt;code&gt;Send&lt;/code&gt; butonuna tıklayın.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ScaleFile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Scales_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Anketlerin ve bağımlılıklarının yüklenmesinin takibini kolaylaştırmak ve karışıklığı önlemek için nelerin yükleneceği liste halinde yazabilir ve yüklediklerinizi işaretleyebilirsiniz.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;4.4 Survey Template ve Dependent Upload İşlemi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;44-survey-template-ve-dependent-upload-işlemi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#44-survey-template-ve-dependent-upload-i%c5%9flemi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Bu aşamada anketimizi ve eğer anketin bağımlı soruları varsa anketin bağımlılığını yükleyeceğiz. Sense&amp;gt;TemplateUploads&amp;gt; SurveyUpload isteğine girin.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SurveyUpload&lt;/strong&gt; açtıktan sonra &lt;code&gt;SurveyHeaders&lt;/code&gt; alanına yükleyeceğiniz anketin &lt;code&gt;Header&lt;/code&gt; dosyasını, &lt;code&gt;Surveys&lt;/code&gt; alanına ise anketin &lt;code&gt;Template&lt;/code&gt; dosyalarını ekleyin, ardından &lt;code&gt;Send&lt;/code&gt; butonuna tıklayın. Geriye dönen Id değeri  anketin bağımlılığı varsa sonraki aşamada kullanılacaktır.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SurveyHeaders&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;Surveys&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Bağımlı Soruların Yüklenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;bağımlı-soruların-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#ba%c4%9f%c4%b1ml%c4%b1-sorular%c4%b1n-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Send&lt;/code&gt; işleminden sonra dönen &lt;code&gt;SurveyHeaderId&lt;/code&gt; kodunu alın. Ardından, Sense&amp;gt;TemplateUploads&amp;gt; &lt;code&gt;surveyDependentQuestion&lt;/code&gt; kısmına gelerek, &lt;code&gt;SurveyHeaderId&lt;/code&gt; alanına bu kodu girin ve &lt;code&gt;QuestionFile&lt;/code&gt; alanına anketin bağımlılığı olan dosyasını ekleyin, ardından &lt;code&gt;Send&lt;/code&gt; butonuna tıklayın.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Her anketin bağımlı soruları olmayabilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;QuestionFile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SurveyHeaderId&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;408&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmtyb2FhODR2aHo3aWVlYWo2bHE4NDYyb2d5bGU5eXZ1OWRkOHIydSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/y5Envp1XPyI8DFM1Uy/giphy.gif&#34; alt=&#34;Alt Text&#34; loading=&#34;lazy&#34; /&gt;&lt;/p&gt;
+&lt;h3&gt;4.5 Diğer Survey Template&amp;rsquo;lerinin ve Dependent Dosyalarının Yüklenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;45-diğer-survey-templatelerinin-ve-dependent-dosyalarının-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#45-di%c4%9fer-survey-templatelerinin-ve-dependent-dosyalar%c4%b1n%c4%b1n-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Aşağıdaki listede belirtilen diğer anket şablonlarını ve bağımlı dosyalarını yüklemek için yukarıdaki adımları tekrarlayın:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SurveyUpload&lt;/strong&gt; kısmına, &lt;code&gt;SurveyHeaders&lt;/code&gt; ve &lt;code&gt;Surveys&lt;/code&gt; dosyalarını ekleyin ve &lt;code&gt;Send&lt;/code&gt; butonuna tıklayın. Daha sonra, bağımlı sorular için &lt;code&gt;surveyDependentQuestion&lt;/code&gt; kısmına, &lt;code&gt;SurveyHeaderId&lt;/code&gt; kodunu ve ilgili &lt;code&gt;QuestionFile&lt;/code&gt; dosyasını ekleyin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Survey&lt;/th&gt;
+&lt;th&gt;SurveyHeader&lt;/th&gt;
+&lt;th&gt;SurveyTemplate&lt;/th&gt;
+&lt;th&gt;DependentQuestion&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CA&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CA Dependent&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CA_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DEI&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DEI_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DEI_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DEI_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DEI Dependent&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DEI_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENPS&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ENPS_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ENPS_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ENPS_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ENPS Dependant&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;ENPS_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OLX&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OLX_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OLX_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OLX_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OLX Dependant&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OLX_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RTN&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RTN_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RTN_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RTN_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RTN Dependant&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;RTN_Dependant_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LCA&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LCA_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LCA_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OHC&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OHC_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;OHC_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SC_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SC_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;UPN&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;UPN_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;UPN_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WB&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WB_Header_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WB_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;N/A&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;4.6 Projeyi Yerel Ortamda Çalıştırma&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;46-projeyi-yerel-ortamda-çalıştırma&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#46-projeyi-yerel-ortamda-%c3%a7al%c4%b1%c5%9ft%c4%b1rma&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Anketleri yerel ortamda çalıştırılan projeyle yüklemek için &lt;code&gt;Sense.Survey.Api&lt;/code&gt;, &lt;code&gt;Sense.API.Gateway&lt;/code&gt; ve bazı Docker tabanlı bağımlılıkların çalışması gerekmektedir.&lt;/p&gt;
+&lt;h4&gt;1. Sense.API.Gateway Projesini Çalıştırma&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;1-senseapigateway-projesini-çalıştırma&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-senseapigateway-projesini-%c3%a7al%c4%b1%c5%9ft%c4%b1rma&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Sense.API.Gateway&lt;/code&gt; projesini doğrudan çalıştırabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2. Sense.Survey.Api Yapılandırması&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;2-sensesurveyapi-yapılandırması&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-sensesurveyapi-yap%c4%b1land%c4%b1rmas%c4%b1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Sense.Survey.Api&lt;/code&gt; için sunucuda kullanılan Redis bağlantı dizesi ile yerel ortamda kullanılacak bağlantı adresi farklı olacaktır. Bu nedenle, yerel ortamda Redis bağlantısını kullanabilmek için &lt;code&gt;AppSettings.json&lt;/code&gt; dosyasında gerekli güncellemeleri yapın. İlgili bilgiler için Mono Ortam Erişim Bilgilerine göz atabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Docker Servislerini Başlatma&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;3-docker-servislerini-başlatma&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-docker-servislerini-ba%c5%9flatma&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Diğer gerekli servisleri yerel ortamınızda başlatmak için Docker Desktop uygulamasını açtıktan sonra &lt;code&gt;docker-compose.yml&lt;/code&gt; dosyasını kullanın.&lt;/li&gt;
+&lt;li&gt;docker-compose.yml dosyasının bulunduğu dizinde aşağıdaki komutu terminalde çalıştırarak servisleri başlatabilirsiniz:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group/code&#34;&gt;
+  
+
+&lt;div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   docker-compose -f docker-compose.yml up&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx-opacity-0 hx-transition group-hover/code:hx-opacity-100 hx-flex hx-gap-1 hx-absolute hx-m-[11px] hx-right-0 hx-top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx-group/copybtn hx-transition-all active:hx-opacity-50 hx-bg-primary-700/5 hx-border hx-border-black/5 hx-text-gray-600 hover:hx-text-gray-900 hx-rounded-md hx-p-1.5 dark:hx-bg-primary-300/10 dark:hx-border-white/10 dark:hx-text-gray-400 dark:hover:hx-text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;copy-icon group-[.copied]/copybtn:hx-hidden hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;success-icon hx-hidden group-[.copied]/copybtn:hx-block hx-pointer-events-none hx-h-4 hx-w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+
+  
+&lt;/div&gt;
+&lt;h4&gt;4. Postman Üzerinden İstek Gönderme&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;4-postman-üzerinden-istek-gönderme&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-postman-%c3%bczerinden-istek-g%c3%b6nderme&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Projeler başarılı bir şekilde çalışmaya başladıktan sonra, Postman üzerinden isteğinizi Gateway’e gönderebilirsiniz.&lt;/li&gt;
+&lt;li&gt;Bunun için Postman&amp;rsquo;de Sense üzerine geldikten sonra yapacağınız isteğin &lt;code&gt;Variables&lt;/code&gt; alanında &lt;code&gt;current value&lt;/code&gt; değerini sunucu yerine &lt;code&gt;localhost:4000&lt;/code&gt; olarak değiştirin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;4.7 Template Bilgilerinin Güncellenmesi&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;47-template-bilgilerinin-güncellenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#47-template-bilgilerinin-g%c3%bcncellenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Bu aşamada, mevcut &lt;code&gt;Action&lt;/code&gt;, &lt;code&gt;Labels&lt;/code&gt; ve &lt;code&gt;Insight&lt;/code&gt;   template bilgilerinde sonradan bir güncelleme yapılması durumunda, bu güncellenen template&amp;rsquo;lerin nasıl yükleneceği gösterilir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Yeni bir tenant oluşturulduğunda bu template bilgilerini yüklemek zorunlu değildir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;ACTION TEMPLATE YÜKLENMESİ&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;action-template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#action-template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Bazı anketler için Action Template bulunmaktadır. Bu template&amp;rsquo;i ilgili tenant&amp;rsquo;a yüklemek için, Postman&amp;rsquo;de bulunan &lt;code&gt;actionUpload&lt;/code&gt; isteğine girin ve body alanında &lt;code&gt;ActionTemplateFile&lt;/code&gt; anahtarına ilgili anketin Insight dosyasını yükleyin.&lt;/p&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ActionTemplateFile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;SC_Action_Template_2024_05_30.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;LABELS TEMPLATE YÜKLENMESİ&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;labels-template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#labels-template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Labels template dosyasında değişiklik olması durumunda yeni dosya yüklenmelidir. Labels template yüklemek için, Postman&amp;rsquo;de bulunan &lt;code&gt;uploadMultiLanguageKeyUpload&lt;/code&gt; isteğine girin ve body alanında &lt;code&gt;MultilanguageUploadFile&lt;/code&gt; anahtarına ilgili Labels dosyasını yükleyin.&lt;/p&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;MultilanguageUploadFile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Labels-05-07-2024.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;INSIGHT  TEMPLATE YÜKLENMESİ&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;insight--template-yüklenmesi&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#insight--template-y%c3%bcklenmesi&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Insight template üzerinde bir değişiklik yapıldığında, yeni dosya yüklenmelidir. Bunun için Postman&amp;rsquo;de bulunan insightUpload isteğini açın ve body alanında, InsightTemplateFile anahtarına değişiklik yapılan Insight template dosyasını yükleyin.&lt;/p&gt;
+&lt;p&gt;Örneğin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;InsightTemplateFile&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;LCA_Insight_Template 231215.xlsx&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;4.8 Son Kontroller&lt;span class=&#34;hx-absolute -hx-mt-20&#34; id=&#34;48-son-kontroller&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#48-son-kontroller&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Tüm anketler için bu adımları tamamladıktan sonra, sisteme giriş yaparak anketlerin düzgün bir şekilde yüklendiğini kontrol edin.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Demo Page</title>
       <link>/docs/first-page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -24,6 +623,24 @@
         
         
         &lt;p&gt;A simple demo page.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Folder</title>
+      <link>/docs/folder/page1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/folder/page1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Change detected, rebuilding site (#4).
+2024-08-20 10:56:47.708 +0300
+Source changed /docs/folder/_index.md
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Total in 101 ms&lt;/p&gt;
 
       </description>
     </item>

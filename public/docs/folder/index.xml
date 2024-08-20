@@ -15,6 +15,24 @@
     
     
     <item>
+      <title>Folder</title>
+      <link>/docs/folder/page1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/folder/page1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Change detected, rebuilding site (#4).
+2024-08-20 10:56:47.708 +0300
+Source changed /docs/folder/_index.md
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Total in 101 ms&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Leaf Page</title>
       <link>/docs/folder/leaf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/docs/tenant-creation/tenant-definition/</loc>
+  </url><url>
+    <loc>/docs/tenant-creation/assign-admin/</loc>
+  </url><url>
+    <loc>/docs/tenant-creation/data-migration/</loc>
+  </url><url>
+    <loc>/docs/tenant-creation/template-setup/</loc>
+  </url><url>
     <loc>/about/</loc>
   </url><url>
     <loc>/categories/</loc>
@@ -12,10 +20,14 @@
   </url><url>
     <loc>/docs/folder/</loc>
   </url><url>
+    <loc>/docs/folder/page1/</loc>
+  </url><url>
     <loc>/docs/folder/leaf/</loc>
   </url><url>
     <loc>/</loc>
   </url><url>
     <loc>/tags/</loc>
+  </url><url>
+    <loc>/docs/tenant-creation/</loc>
   </url>
 </urlset>

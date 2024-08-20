@@ -1,10 +1,10 @@
 ---
 title: Folder
 type: docs
-prev: docs/first-page
+prev: docs/folder/_index
 next: docs/folder/leaf
 sidebar:
   open: true
 ---
 
-Pages can be organized into folders.
+this page 0

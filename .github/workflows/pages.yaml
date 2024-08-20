@@ -57,7 +57,7 @@ jobs:
         run: |
           hugo \
             --gc --minify \
-            --baseURL "--baseURL "https://mustafaoge.github.io/senswise.documents/"
+            --baseURL "--baseURL https://mustafaoge.github.io/senswise.documents/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

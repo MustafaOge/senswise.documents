@@ -31,24 +31,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.132.2
+      HUGO_VERSION: 0.117.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # fetch all history for .GitInfo and .Lastmod
-          submodules: recursive
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v4
         with:
-          go-version: '1.22'
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
+          go-version: '1.21'
       - name: Setup Hugo
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.117.0'
+          extended: true
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -57,9 +54,9 @@ jobs:
         run: |
           hugo \
             --gc --minify \
-            --baseURL "--baseURL https://mustafaoge.github.io/senswise.documents/"
+            --baseURL "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
@@ -73,4 +70,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
